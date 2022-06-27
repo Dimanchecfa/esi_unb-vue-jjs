@@ -1,0 +1,98 @@
+<template>
+<div v-if="loading">
+  <div class="flex items-center justify-center">
+  <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full text-green" role="status">
+    <span class="visually-hidden bg-black"> . . ..</span>
+  </div>
+</div>
+</div>
+    <!-- component -->
+<div v-else>
+     <h1 class="font-bold text-2xl text-gray-700 w-8/10 text-center">
+      Liste des  secretaire
+          </h1>
+      <table class="min-w-full table-auto">
+        <thead class="justify-between">
+          <tr class="bg-gray-800">
+           
+            <th class="px-6 py-2">
+              <span class="text-gray-300">Matricule</span>
+            </th>
+           
+            <th class="px-6 py-2">
+              <span class="text-gray-300">Nom</span>
+            </th>
+
+            <th class="px-6 py-2">
+              <span class="text-gray-300">Prenom</span>
+            </th>
+
+            <th class="px-6 py-2">
+              <span class="text-gray-300">Email</span>
+            </th>
+            <th class="px-6 py-2">
+              <span class="text-gray-300">Action</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-200">
+          <tr :key="student.id" v-for="student in students" class="bg-white border-4 border-gray-200 text-center">
+           
+            <td class="px-16 py-2 text-center text-center">
+              <span class="text-center  font-semibold">{{student.matricule}}</span>
+            </td>
+           
+            <td class="px-16 py-2 text-center text-center">
+              <span class="text-center  font-semibold">{{student.nom}}</span>
+            </td>
+           
+            <td class="px-16 py-2 text-center text-center">
+              <span class="text-center  font-semibold">{{student.prenom}}</span>
+            </td>
+            <td class="px-16 py-2 text-center text-center">
+              <span class="text-center  font-semibold">{{student.email}}</span>
+            </td>
+           
+             <td class="px-16 py-2 text-center">
+              <font-awesome-icon icon="far fa-edit" />
+            </td>
+
+           
+          </tr>
+         
+          
+        </tbody>
+      </table>
+    </div>
+</template>
+<script>
+import axios from 'axios';
+export default {
+    name:'ListeE',
+    data() {
+      return{
+          students:[],
+          loading:true
+      }
+    },
+  methods :{
+    getStudent() {
+        axios
+        .get('http://127.0.0.1:8000/api/student')
+        .then( (response)=> {
+            this.students = response.data.data,
+            this.loading = false
+        })
+        .catch( (error)=> {
+            console.log(error.toJSON())
+        })
+        
+    }
+    },
+    mounted() {
+        this.getStudent();
+    }
+
+}
+
+</script>

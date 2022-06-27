@@ -8,29 +8,25 @@
   <body class="h-full">
   ```
 -->
-  <div class="min-h-full">
-    <nav class="bg-gray-800">
+  <div class="relative min-h-full bg-green">
+    <nav class=" bg-green-600">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex items-center">
+        <div class=" flex items-center justify-between h-16">
+          <div class=" flex items-center">
             <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+              <img class="h-11 w-11" src="./assets/img/nazi.png" alt="Workflow">
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               
-          <router-link to="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</router-link>
-          <router-link to="/team" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base ">Team</router-link>
+              <router-link to="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Acceuil</router-link>
+              <router-link to="/AddSecretaire" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Ajouter Secretaire </router-link>
+              <router-link to="/secretaire" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Liste des Secretaires </router-link>
+              <router-link to="/addStudent" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Ajouter Etudiant </router-link>
+              <router-link to="/etudiants" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Listes Etudiant </router-link>
 
-                <a href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
-                <a href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Calendar</a>
-
-                <a href="#"
-                  class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+               
               </div>
             </div>
           </div>
@@ -62,18 +58,11 @@
       <div class="md:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" 
-            aria-current="page"></a>
-
-
-          <a href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-
-          <a href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
-
-          <a href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reports</a>
+        <router-link to="/" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Acceuil</router-link>
+              <router-link to="/AddSecretaire" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Ajouter Secretaire </router-link>
+              <router-link to="/secretaire" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Liste des Secretaires </router-link>
+              <router-link to="/addStudent" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Ajouter Etudiant </router-link>
+              <router-link to="/etudiants" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-sm "> Listes Etudiant </router-link>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center px-5">
@@ -113,12 +102,13 @@
       </div>
     </nav>
 
+
    
     <main>
       <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- Replace with your content -->
         <div class="px-4 py-6 sm:px-0">
-          <div class="border-4 borderborder-gray-200 rounded-lg h-96">
+          <div class="rounded-lg h-96">
 
             <router-view></router-view>
           </div>
