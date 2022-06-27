@@ -9,6 +9,7 @@
         </h1>
 
         <form class="space-y-4" @submit.prevent="addStudent">
+          
           <input type="text" placeholder="Matricule" class="border-2 rounded-lg w-full h-12 px-4" v-model="matricule" />
 
           <input type="text" placeholder="Nom" class="border-2 rounded-lg w-full h-12 px-4" v-model="nom"/>
@@ -59,20 +60,26 @@ export default {
   },
   methods: {
     addStudent() {
-      axios.post('http://localhost:8000/api/students', {
+     
+      axios.post('http://localhost:8000/api/student',{
+
+
         'matricule': this.matricule,
         'nom': this.nom,
         'prenom': this.prenom,
         'email': this.email,
       })
         .then(response => {
-          console.log(response.data.data);
+        
+           this.$router.push({path:'/etudiants'});
         })
         .catch(error => {
           console.log(error);
         });
+        
     },
   },
+  
 
 }
 
