@@ -109,7 +109,7 @@ export default {
   methods :{
     getStudent() {
         axios
-        .get('http://127.0.0.1:8000/api/student')
+        .get('https://laravel-api-student.herokuapp.com/api/student')
         .then( (response)=> {
             this.students = response.data.data,
             this.loading = false

@@ -61,7 +61,7 @@ export default {
   methods: {
     addStudent() {
      
-      axios.post('http://localhost:8000/api/student',{
+      axios.post('https://laravel-api-student.herokuapp.com/api/student',{
 
 
         'matricule': this.matricule,
