@@ -61,9 +61,7 @@ export default {
   methods: {
     addStudent() {
      
-      axios.post('https://laravel-api-student.herokuapp.com/api/student',{
-
-
+      axios.post('https://api-dimanche.herokuapp.com/api/student',{
         'matricule': this.matricule,
         'nom': this.nom,
         'prenom': this.prenom,

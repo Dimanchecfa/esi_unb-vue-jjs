@@ -1,36 +1,15 @@
-<script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script>
+
 
 <template>
+
  
 </template>
 
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  top: -10px;
-}
+<script>
+export default {}
 
-h3 {
-  font-size: 1.2rem;
-}
+</script>
 
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
+<style>
 
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
 </style>

@@ -109,7 +109,7 @@ export default {
   methods :{
     getStudent() {
         axios
-        .get('https://laravel-api-student.herokuapp.com/api/student')
+        .get('https://api-dimanche.herokuapp.com/api/student')
         .then( (response)=> {
             this.students = response.data.data,
             this.loading = false
@@ -124,6 +124,7 @@ export default {
         axios.delete(`http://127.0.0.1:8000/api/student/${student.id}`)
              .then(response => {
                  console.log(response);
+                 
              })
              .catch(function (error) {
                 console.log(error.response)
